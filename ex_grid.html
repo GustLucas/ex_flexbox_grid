@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRIIIID</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      /* ---- HEADER ----*/
+      .header {
+        background-color: #fff;
+        border: 2px solid black;
+        height: 60px;
+        width: 100%;
+        text-align: center;
+      }
+      /* ---- MAIN ----*/
+      .container {
+        background-color: #ccc;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .main {
+        flex: 1 0 auto;
+        display: grid;
+        padding: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 15px;
+        grid-auto-rows: minmax(110px, auto);
+        grid-template-areas:
+          "item1 item2 item3"
+          "item4 item4 item4"
+          "item5 item5 item6";
+      }
+      .items {
+        background-color: #fff;
+        font-size: 30px;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+      }
+
+      /* ---- ITEMS ----*/
+      .header {
+        grid-area: header;
+      }
+      .main {
+        grid-area: main;
+      }
+      .footer {
+        grid-area: footer;
+      }
+      .item1 {
+        grid-area: item1;
+        min-width: 250px;
+      }
+      .item2 {
+        grid-area: item2;
+        min-width: 250px;
+      }
+      .item3 {
+        grid-area: item3;
+        min-width: 250px;
+      }
+      .item4 {
+        grid-area: item4;
+      }
+      .item5 {
+        grid-area: item5;
+        min-width: 350px;
+      }
+      .item6 {
+        grid-area: item6;
+        min-width: 250px;
+      }
+
+      /* ---- FOOTER ---- */
+
+      .footer {
+        background-color: #fff;
+        border: 2px solid black;
+        height: 60px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* ---- MEDIA QUERY ---- */
+      @media (max-width: 780px) {
+        .main {
+          grid-template-areas:
+            "item1 item1 item1"
+            "item2 item2 item2"
+            "item3 item3 item3"
+            "item4 item4 item4"
+            "item5 item5 item6";
+        }
+      }
+      @media (max-width: 630px) {
+        .main {
+          grid-template-areas:
+            "item1 item1 item1"
+            "item2 item2 item2"
+            "item3 item3 item3"
+            "item4 item4 item4"
+            "item5 item5 item5"
+            "item6 item6 item6";
+        }
+      }
+      @media (max-width: 360px) {
+        .item5 {
+          min-width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <p>HEADER</p>
+      </header>
+      <section class="main">
+        <div class="items item1"></div>
+        <div class="items item2"></div>
+        <div class="items item3"></div>
+        <div class="items item4"></div>
+        <div class="items item5"></div>
+        <div class="items item6"></div>
+      </section>
+      <footer class="footer">
+        <p>FOOTER</p>
+      </footer>
+    </div>
+  </body>
+</html>
